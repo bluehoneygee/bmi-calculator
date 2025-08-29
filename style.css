@@ -1,0 +1,239 @@
+:root {
+  --bg: #fff1e6;
+  --ink: #231d23;
+  --card: #fff;
+  --line: #e7d7cf;
+  --blue: #1f69e0;
+  --green: #56c271;
+  --yellow: #ffd042;
+  --orange: #f59a2f;
+  --red: #e53a32;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+.wrap {
+  width: min(420px, 94%);
+}
+.phone {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px;
+}
+h1 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+}
+.field label {
+  display: block;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.field input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cfc6c1;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.field input:focus {
+  border-color: #b14862;
+  outline: 0;
+}
+.help {
+  display: block;
+  font-size: 12px;
+  color: #6b6370;
+  margin-top: 6px;
+}
+.error {
+  display: block;
+  min-height: 16px;
+  font-size: 12px;
+  color: #a11b2a;
+  margin-top: 6px;
+}
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #b14862;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn:disabled {
+  background: #d5c9c3;
+  cursor: not-allowed;
+}
+.hide {
+  display: none;
+}
+
+.gwrap {
+  position: relative;
+  width: 300px;
+  height: 170px;
+  margin: 18px auto 6px;
+}
+.gsvg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 150px;
+  overflow: visible;
+}
+.seg {
+  fill: none;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+}
+.needle {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, 0) rotate(0deg);
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  z-index: 2;
+}
+.needle::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  width: 8px;
+  height: 82px;
+  background: #2b2b2b;
+  border-radius: 8px;
+}
+.needle::after {
+  content: "";
+  position: absolute;
+  left: -8px;
+  bottom: 60px;
+  width: 16px;
+  height: 36px;
+  background: #2b2b2b;
+  border-radius: 16px 16px 60% 60%/16px 16px 80% 80%;
+  transform: translateY(-6px);
+}
+.hub {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, 50%);
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #2b2b2b;
+  z-index: 3;
+}
+
+.ticks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tick {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform-origin: 50% 100%;
+  font-weight: 800;
+  font-size: 14px;
+  color: #111;
+  text-shadow: 0 1px 0 #fff;
+}
+.tick span {
+  display: block;
+  transform: translate(-50%, -110px) rotate(calc(-1 * var(--rot)));
+}
+
+.center {
+  text-align: center;
+  margin-top: 4px;
+}
+.bmi {
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin: 8px 0 2px;
+}
+.badge.under {
+  background: #e1efff;
+  color: #114a90;
+}
+.badge.normal {
+  background: #dff5ea;
+  color: #0a5a3f;
+}
+.badge.over {
+  background: #ffeab8;
+  color: #6a4b00;
+}
+.badge.obese {
+  background: #ffd6d6;
+  color: #7a101b;
+}
+.meta {
+  color: #6b6370;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.card {
+  margin-top: 14px;
+  padding: 14px;
+  background: #faf7f3;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+.card p {
+  margin: 0 0 10px;
+}
+.range {
+  font-weight: 800;
+  color: #0a6b3a;
+  font-size: 18px;
+}
+.pill {
+  display: inline-block;
+  background: #e33b3b;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  margin-left: 8px;
+  font-size: 12px;
+}
