@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="phone">
+        <h1>BMI Calculator</h1>
+
+        <div id="formBox">
+          <div class="grid">
+            <div class="field">
+              <label for="weight">Weight (kg)</label>
+              <input
+                type="number"
+                id="weight"
+                placeholder="e.g., 52.5"
+                required
+              />
+              <span class="help">Recommended range: 20–300 kg.</span>
+              <span id="errW" class="error"></span>
+            </div>
+            <div class="field">
+              <label for="height">Height (cm)</label>
+              <input
+                type="number"
+                id="height"
+                placeholder="e.g., 160"
+                required
+              />
+              <span class="help">Recommended range: 80–250 cm.</span>
+              <span id="errH" class="error"></span>
+            </div>
+          </div>
+          <button id="calcBtn" class="btn" disabled>Calculate BMI</button>
+        </div>
+
+        <div id="resultBox" class="hide">
+          <div class="gwrap">
+            <svg id="gsvg" class="gsvg" viewBox="0 0 300 160"></svg>
+            <div class="ticks" id="ticks"></div>
+            <div id="needle" class="needle"></div>
+            <div class="hub"></div>
+          </div>
+
+          <div class="center">
+            <p>Your BMI is…</p>
+            <p id="bmiVal" class="bmi">—</p>
+            <div id="badge" class="badge" style="display: none"></div>
+            <p id="meta" class="meta"></p>
+          </div>
+
+          <div id="advice" class="card" style="display: none">
+            <p id="tip">—</p>
+            <p>
+              <b>Normal Weight</b> for your height (<span id="hShow">-</span>
+              cm)
+            </p>
+            <p class="range">
+              <span id="range">-</span
+              ><span id="delta" class="pill" style="display: none"></span>
+            </p>
+          </div>
+
+          <button id="againBtn" class="btn" style="background: #6c757d">
+            Calculate again
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
